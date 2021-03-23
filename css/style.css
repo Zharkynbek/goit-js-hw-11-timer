@@ -1,0 +1,22 @@
+.timer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.value {
+  color: rgb(236, 18, 18);
+  text-align: center;
+  font-size: 36px;
+}
+
+.label {
+  font-weight: 700;
+  text-align: center;
+  font-size: 32px;
+  color: rgb(66, 173, 66);
+}
