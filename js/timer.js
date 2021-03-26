@@ -32,9 +32,9 @@ class CountdownTimer  {
 
 const time = new CountdownTimer({
   selector: '#timer-1',
-  targetDate: 'Jul 17, 2021',
+  targetDate: 'Aug 31, 2021',
 });
 
 time.start()
 const timerRef = document.querySelector('#timer-1')
-const targetDate = new Date('Jul 17, 2021')
+const targetDate = new Date('Aug 31, 2021')
