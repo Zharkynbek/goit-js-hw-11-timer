@@ -1,5 +1,5 @@
 body {
-  background-color: gainsboro;
+  background-color: black;
 }
 
 .timer {
@@ -13,7 +13,7 @@ body {
 }
 
 .value {
-  color: rgb(236, 18, 18);
+  color: red;
   text-align: center;
   font-size: 22px;
 }
@@ -30,12 +30,12 @@ h1 {
   margin-bottom: 50px;
   text-align: center;
   font-size: 22px;
-  color: darkred;
+  color: coral;
 }
 
 h2 {
   margin-top: 50px;
   text-align: center;
   font-size: 22px;
-  color: darkred;
+  color: coral;
 }
