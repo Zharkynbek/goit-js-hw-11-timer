@@ -1,3 +1,31 @@
+// Dark Modus
+
+const bodyRef = document.body
+const inputRef = document.querySelector('#theme-switch-toggle')
+
+const Theme = {
+  LIGHT: 'light-theme',
+  DARK: 'dark-theme',
+};
+
+bodyRef.classList.add(localStorage.getItem('theme') === null ? Theme.LIGHT : localStorage.getItem('theme'))
+inputRef.checked = localStorage.getItem('theme') === Theme.DARK
+
+
+function changeTheme() {
+    if (inputRef.checked) {
+        bodyRef.classList.add(Theme.DARK)
+        bodyRef.classList.remove(Theme.LIGHT)
+        localStorage.setItem('theme', Theme.DARK)
+    } else {
+        bodyRef.classList.remove(Theme.DARK)
+        bodyRef.classList.add(Theme.LIGHT)
+        localStorage.setItem('theme', Theme.LIGHT)
+    }
+}
+
+inputRef.addEventListener('click', changeTheme)
+
 class CountdownTimer  {
   constructor({selector, targetDate}) {
     this.selector = selector
@@ -38,3 +66,4 @@ const time = new CountdownTimer({
 time.start()
 const timerRef = document.querySelector('#timer-1')
 const targetDate = new Date('Aug 31, 2021')
+
