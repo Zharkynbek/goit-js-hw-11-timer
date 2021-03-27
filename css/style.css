@@ -1,13 +1,3 @@
-body.light-theme {
-  background-color: #fff;
-  color: #333333;
-}
-
-body.dark-theme {
-  background-color: #333333;
-  color: #fff;
-}
-
 .timer {
   display: flex;
   justify-content: space-around;
@@ -47,6 +37,16 @@ h2 {
 }
 
 /* THEME SWITCH */
+body.light-theme {
+  background-color: #fff;
+  color: #333333;
+}
+
+body.dark-theme {
+  background-color: #333333;
+  color: #fff;
+}
+
 .theme-switch {
   display: flex;
   align-items: center;
