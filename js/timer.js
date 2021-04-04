@@ -42,20 +42,36 @@ class CountdownTimer  {
     const currentDate = Date.now()
     const rest = this.targetDate - currentDate
 
-    const days = Math.floor(rest / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((rest % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const mins = Math.floor((rest % (1000 * 60 * 60)) / (1000 * 60));
-    const secs = Math.floor((rest % (1000 * 60)) / 1000);
+    const days = pad(Math.floor(rest / (1000 * 60 * 60 * 24)));
+    const hours = pad(Math.floor((rest % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+    const mins = pad(Math.floor((rest % (1000 * 60 * 60)) / (1000 * 60)));
+    const secs = pad(Math.floor((rest % (1000 * 60)) / 1000));
     
-    daysRef.textContent = days > 9 ? days : `0${days}`
-    hoursRef.textContent = hours > 9 ? hours : `0${hours}`
-    minsRef.textContent = mins > 9 ? mins : `0${mins}`
-    secsRef.textContent = secs > 9 ? secs : `0${secs}`
+    daysRef.textContent = days
+    hoursRef.textContent = hours
+    minsRef.textContent = mins
+    secsRef.textContent = secs
+
+    // ================ without padStart =====================
+
+    // const days = Math.floor(rest / (1000 * 60 * 60 * 24));
+    // const hours = Math.floor((rest % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    // const mins = Math.floor((rest % (1000 * 60 * 60)) / (1000 * 60));
+    // const secs = Math.floor((rest % (1000 * 60)) / 1000);
+
+    // daysRef.textContent = days > 9 ? days : `0${days}`
+    // hoursRef.textContent = hours > 9 ? hours : `0${hours}`
+    // minsRef.textContent = mins > 9 ? mins : `0${mins}`
+    // secsRef.textContent = secs > 9 ? secs : `0${secs}`
   }
 
   start() {
     setInterval(this.timer, 1000)
   }
+}
+
+function pad(value) {
+  return String(value).padStart(2, '0')
 }
 
 const time = new CountdownTimer({
